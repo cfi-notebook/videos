@@ -61,7 +61,7 @@ RSpec.describe Videos::URI do
   describe '.content_type' do
     context 'with invalid url or no Internet' do
       subject { described_class.new('lkjsdljksdlkjdsf').content_type }
-      it { is_expected.to be_falsy }
+      it { is_expected.to be_nil }
     end
 
     context 'mp4' do
