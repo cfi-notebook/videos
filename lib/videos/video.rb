@@ -40,4 +40,8 @@ class Videos::Video
   def controls
     @options[:controls]
   end
+
+  def provider
+    @uri.provider
+  end
 end
