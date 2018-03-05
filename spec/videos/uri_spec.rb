@@ -59,6 +59,11 @@ RSpec.describe Videos::URI do
   end
 
   describe '.content_type' do
+    context 'with invalid url or no Internet' do
+      subject { described_class.new('lkjsdljksdlkjdsf').content_type }
+      it { is_expected.to be_falsy }
+    end
+
     context 'mp4' do
       let(:uri) { described_class.new('https://www.faa.gov/v_ondemand/StressinAviation_FAA_Web.mp4') }
       it 'gets the content-type' do

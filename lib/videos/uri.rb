@@ -36,7 +36,11 @@ class Videos::URI
   private
 
   def get_content_type
-    resp = HTTParty.head(@uri, follow_redirects: true)
-    resp.headers['content-type'].split(';')[0]
+    begin
+      resp = HTTParty.head(@uri, follow_redirects: true)
+      resp.headers['content-type'].split(';')[0]
+    rescue
+      false
+    end
   end
 end
