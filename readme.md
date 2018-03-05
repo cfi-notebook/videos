@@ -1,6 +1,10 @@
 # Videos
 
-Accept the URL to a video and generate embed code or other useful attributes.
+Videos is an API for going from a URL to video embed code.
+
+Right now only the basics are implemented.
+
+YouTube, Vimeo and `<video>` tags are supported.
 
 ## Usage
 
