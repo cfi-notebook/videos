@@ -24,8 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "guard-rspec", "~> 4.7"
-  spec.add_development_dependency "html_validation"
+  spec.add_development_dependency "html_validation", "~> 1.1.5"
 
-  spec.add_dependency "httparty"
-  spec.add_dependency "actionview"
+  spec.add_dependency "httparty", "~> 0.16"
+  spec.add_dependency "actionview", "~> 5"
 end

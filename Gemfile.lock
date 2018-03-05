@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    videos (1.0.0)
-      actionview
-      httparty
+    rb42-videos (1.0.0)
+      actionview (~> 5)
+      httparty (~> 0.16)
 
 GEM
   remote: https://rubygems.org/
@@ -102,10 +102,10 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.16)
   guard-rspec (~> 4.7)
-  html_validation
+  html_validation (~> 1.1.5)
   rake (~> 10.0)
+  rb42-videos!
   rspec (~> 3.0)
-  videos!
 
 BUNDLED WITH
    1.16.0
