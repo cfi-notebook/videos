@@ -15,7 +15,7 @@ gem 'videos', git: 'https://github.com/ryanburnette/videos.git'
 
 ```
 require 'videos'
-v = Videos.new('https://youtu.be/abc123')
+v = Videos.factory('https://youtu.be/abc123')
 v.id
 v.to_html
 ```
