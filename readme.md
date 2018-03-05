@@ -10,7 +10,9 @@ YouTube, Vimeo and `<video>` tags are supported.
 
 ```ruby
 # Gemfile
-gem 'videos', git: 'https://github.com/ryanburnette/videos.git'
+gem 'rb42-videos', '~> 1.0'
+# or
+gem 'videos', '~> 1.0', git: 'https://github.com/ryanburnette/videos.git'
 ```
 
 ```
