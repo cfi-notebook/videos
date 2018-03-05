@@ -2,6 +2,7 @@ class Videos::YouTube < Videos::Video
   def embed_code
     content_tag(:iframe, '', type: 'text/html', width: width, height: height, src: src)
   end
+  alias_method :to_html, :embed_code
 
   def id
     id = ''
