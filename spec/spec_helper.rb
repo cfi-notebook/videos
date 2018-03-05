@@ -1,6 +1,9 @@
 require "bundler/setup"
 require "videos"
 require 'videos/uri'
+require 'html_validation'
+
+include PageValidations
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

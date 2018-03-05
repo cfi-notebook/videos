@@ -1,15 +1,17 @@
 RSpec.describe Videos::URI do
   before :all do
     @youtube_id = 'dQw4w9WgXcQ'
-    @uri = Videos::URI.new("https://www.youtube.com/watch?v=#{@youtube_id}")
+    @youtube_uri = "https://www.youtube.com/watch?v=#{@youtube_id}"
+    @uri = Videos::URI.new(@youtube_uri)
   end
 
-  describe 'methods' do
+  describe 'instance methods' do
     subject { @uri }
     it { is_expected.to respond_to(:obj) }
     it { is_expected.to respond_to(:provider) }
     it { is_expected.to respond_to(:query) }
     it { is_expected.to respond_to(:content_type) }
+    it { is_expected.to respond_to(:to_s) }
   end
 
   describe '.provider' do

@@ -29,6 +29,10 @@ class Videos::URI
     @content_type ||= get_content_type
   end
 
+  def to_s
+    obj.to_s
+  end
+
   private
 
   def get_content_type
