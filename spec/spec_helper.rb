@@ -1,5 +1,6 @@
 require "bundler/setup"
-require "cfi_notebook/videos"
+require "videos"
+require 'videos/uri'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
