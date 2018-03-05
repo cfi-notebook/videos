@@ -22,7 +22,7 @@ class Videos::URI
   end
 
   def query
-    CGI::parse(obj.query).to_h
+    CGI::parse(obj.query).to_h if obj.query
   end
 
   def content_type

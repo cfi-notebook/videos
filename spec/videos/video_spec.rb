@@ -8,6 +8,9 @@ RSpec.describe Videos::Video do
     subject { @video }
     it { is_expected.to respond_to(:embed_code) }
     it { is_expected.to respond_to(:to_html) }
+    it { is_expected.to respond_to(:options) }
+    it { is_expected.to respond_to(:width) }
+    it { is_expected.to respond_to(:height) }
   end
 
   describe '#embed_code' do

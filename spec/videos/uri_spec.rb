@@ -2,6 +2,7 @@ RSpec.describe Videos::URI do
   before :all do
     @youtube_id = 'dQw4w9WgXcQ'
     @youtube_uri = "https://www.youtube.com/watch?v=#{@youtube_id}"
+    @youtube_short = 'https://youtu.be/BkEUpymTanA'
     @uri = Videos::URI.new(@youtube_uri)
   end
 
@@ -22,7 +23,7 @@ RSpec.describe Videos::URI do
     end
 
     context 'short youtube url' do
-      let(:uri) { described_class.new('https://youtu.be/BkEUpymTanA') }
+      let(:uri) { described_class.new(@youtube_short) }
 
       it 'identifies the provider as youtube' do
         expect(uri.provider).to eq('youtube')
@@ -47,6 +48,13 @@ RSpec.describe Videos::URI do
       expect(@uri.query.keys.first).to eq('v')
       expect(@uri.query['v']).to be_a(Array)
       expect(@uri.query['v'][0]).to eq(@youtube_id)
+    end
+    
+    context 'short youtube uri' do
+      let(:uri) { described_class.new(@youtube_short) }
+      it 'returns false if there is no query' do
+        expect(uri.query).to be_falsy
+      end
     end
   end
 
