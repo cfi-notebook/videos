@@ -11,11 +11,13 @@ RSpec.describe Videos::Video do
     it { is_expected.to respond_to(:options) }
     it { is_expected.to respond_to(:width) }
     it { is_expected.to respond_to(:height) }
+    it { is_expected.to respond_to(:controls) }
   end
 
   describe '#embed_code' do
     subject { @video.embed_code }
     it { is_expected.to include('<video') }
+    it { is_expected.to include('controls') }
     it { is_expected.to include('src=') }
     it { is_expected.to include('<span') }
     it { is_expected.to include('sorry') }

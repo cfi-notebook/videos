@@ -9,7 +9,8 @@ class Videos::Video
 
   DEFAULTS = {
     width: 640,
-    height: 360
+    height: 360,
+    controls: true
   }
   def initialize(uri,options={})
     @uri = uri
@@ -17,7 +18,7 @@ class Videos::Video
   end
 
   def embed_code
-    content_tag(:video) do
+    content_tag(:video, '', controls: controls) do
       concat(tag(:source, src: @uri.to_s, type: @uri.content_type))
       concat(content_tag(:span, sorry_message, class: 'sorry'))
     end
@@ -34,5 +35,9 @@ class Videos::Video
 
   def height
     @options[:height]
+  end
+
+  def controls
+    @options[:controls]
   end
 end
