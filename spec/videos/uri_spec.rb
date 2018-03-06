@@ -30,6 +30,11 @@ RSpec.describe Videos::URI do
       end
     end
 
+    context 'youtube url with no www' do
+      subject { described_class.new('https://youtube.com/embed/ihee35QrWtk').provider }
+      it { is_expected.to eq('youtube') }
+    end
+
     context 'vimeo url' do
       let(:uri) { described_class.new('https://vimeo.com/136531109') }
 

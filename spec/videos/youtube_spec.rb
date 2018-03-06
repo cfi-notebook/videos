@@ -1,9 +1,10 @@
 RSpec.describe Videos::YouTube do
   before :all do
     @youtube_id = 'dQw4w9WgXcQ'
-    @youtube_short = 'http://youtu.be/' + @youtube_id
-    @youtube_long = 'https://www.youtube.com/watch?v=' + @youtube_id
-    @youtube_uri = Videos::URI.new(@youtube_short)
+    @youtube_url = "https://www.youtube.com/watch?v=#{@youtube_id}"
+    @youtube_url_short = "http://youtu.be/#{@youtube_id}"
+    @youtube_url_no_www = "https://youtube.com/embed/#{@youtube_id}"
+    @youtube_uri = Videos::URI.new(@youtube_url_short)
     @video = Videos::YouTube.new(@youtube_uri)
   end
 
@@ -15,12 +16,17 @@ RSpec.describe Videos::YouTube do
 
   describe '#id' do
     context 'long youtube url' do
-      subject { Videos::YouTube.new(@youtube_long).id }
+      subject { Videos::YouTube.new(@youtube_url).id }
       it { is_expected.to eq(@youtube_id) }
     end
 
     context 'short youtube url' do
-      subject { Videos::YouTube.new(@youtube_short).id }
+      subject { Videos::YouTube.new(@youtube_url_short).id }
+      it { is_expected.to eq(@youtube_id) }
+    end
+
+    context 'youtube url no www' do
+      subject { Videos::YouTube.new(@youtube_url_no_www).id }
       it { is_expected.to eq(@youtube_id) }
     end
   end
