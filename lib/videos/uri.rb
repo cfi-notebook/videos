@@ -5,6 +5,7 @@ require 'httparty'
 class Videos::URI
   PROVIDERS_BY_HOST = {
     'www.youtube.com' => 'youtube',
+    'youtube.com'     => 'youtube',
     'youtu.be'        => 'youtube',
     'vimeo.com'       => 'vimeo'
   }
