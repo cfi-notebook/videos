@@ -29,5 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "html_validation", "~> 1.1"
 
   spec.add_dependency "httparty", "~> 0.16"
-  spec.add_dependency "padrino-helpers", "~> 0.14"
+  spec.add_dependency "padrino-helpers", "~> 0.13"
 end
