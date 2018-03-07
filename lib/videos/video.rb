@@ -1,9 +1,5 @@
-require 'action_view'
-
 class Videos::Video
-  include ActionView::Helpers::TagHelper
-  include ActionView::Helpers::TextHelper
-  include ActionView::Context
+  include Videos::TagHelpers
   attr_reader :uri
   attr_accessor :options
 
@@ -19,8 +15,8 @@ class Videos::Video
 
   def embed_code
     content_tag(:video, '', controls: controls) do
-      concat(tag(:source, src: @uri.to_s, type: @uri.content_type))
-      concat(content_tag(:span, sorry_message, class: 'sorry'))
+      tag(:source, src: @uri.to_s, type: @uri.content_type) +
+      content_tag(:span, sorry_message, class: 'sorry')
     end
   end
   alias_method :to_html, :embed_code
