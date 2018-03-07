@@ -1,4 +1,5 @@
 require "videos/version"
+require "videos/tag_helpers"
 require "videos/uri"
 require "videos/video"
 require "videos/youtube"
